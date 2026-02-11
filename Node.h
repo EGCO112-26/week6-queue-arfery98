@@ -28,19 +28,24 @@ void enqueue(NodePtr * head, NodePtr* tail, int x){
 int dequeue(NodePtr* head, NodePtr* tail){
   NodePtr t=*head;
   if(t){
-    int value= t->data;
-    
-    //normal dequeue case
-    *head=t->nextPtr;
-    if(*head==NULL){
-      *tail=NULL;
-    }
-    free(t);
+    int value=t->data;
+    /* Finish dequeue*/
+   // Normal Case
+        *head=t->nextPtr;
+        free(t);
+        if(*head==NULL){
+          *tail=NULL;
+        }
+
+   // Last Queue
+        if((*head)==(*tail)) {
+          *tail=NULL;
+        }
     return value;
   }
   printf("Empty queue");
+
   return 0;
 }
-
 
 #endif
