@@ -32,12 +32,10 @@ int dequeue(NodePtr* head, NodePtr* tail){
     
     //normal dequeue case
     *head=t->nextPtr;
-    free(t);
-    
     if(*head==NULL){
       *tail=NULL;
     }
-  
+    free(t);
     return value;
   }
   printf("Empty queue");
