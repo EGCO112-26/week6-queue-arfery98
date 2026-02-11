@@ -24,8 +24,8 @@ int dequeue_struct(Queue *q){
     int value= t->data;
 
     q->headPtr=t->nextPtr;
-    if(q->headPtr == NULL) { // ถ้าเอาออกแล้ว Queue ว่าง
-      q->tailPtr = NULL;   // ต้องล้างหางด้วย
+    if(q->headPtr == NULL) { 
+      q->tailPtr = NULL;  
     }
     free(t);
     q->size--;
